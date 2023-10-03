@@ -6,14 +6,14 @@ ARTIFACTS = "артефакты"
 TYPE = "тип"
 
 ARTIFACT_LEVEL_UP = "уровень"
-REROLL = "заново"
+REROLL = "reroll"
 BACK = "назад"
 
-FLOWER = 'цветок'
-FEATHER = 'перо'
-CLOCK = 'часы'
-GOBLET = 'кубок'
-CROWN = 'корона'
+FLOWER = 'flower'
+FEATHER = 'feather'
+CLOCK = 'clock'
+GOBLET = 'goblet'
+CROWN = 'crown'
 
 
 async def main_keyboard():
@@ -22,11 +22,11 @@ async def main_keyboard():
     return z
 async def type_keyboard():
     a = InlineKeyboardButton(text="Цветок", callback_data=FLOWER)
-    b = InlineKeyboardButton(text="Перо (\u2699)", callback_data=FEATHER)
-    c = InlineKeyboardButton(text="Часы (\u2699)", callback_data=CLOCK)
-    d = InlineKeyboardButton(text="Кубок (\u2699)", callback_data=GOBLET)
-    e = InlineKeyboardButton(text="Корона (\u2699)", callback_data=CROWN)
-    z = InlineKeyboardMarkup(inline_keyboard=[[a],[b],[c],[d],[e]])
+    b = InlineKeyboardButton(text="Перо", callback_data=FEATHER)
+    c = InlineKeyboardButton(text="Часы", callback_data=CLOCK)
+    d = InlineKeyboardButton(text="Кубок", callback_data=GOBLET)
+    e = InlineKeyboardButton(text="Корона", callback_data=CROWN)
+    z = InlineKeyboardMarkup(inline_keyboard=[[a, b],[c, d],[e]])
     return z
 async def artifact_level_up_keyboard(artefact_level):
     if artefact_level < 20:
